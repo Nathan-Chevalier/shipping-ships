@@ -16,10 +16,9 @@ export const cargoList = () => {
 
 document.addEventListener("click", (clickEvent) => {
   const itemClicked = clickEvent.target;
-
-  // Was a shipping ship list item clicked?
   if (itemClicked.dataset.type === "cargoShip") {
     let haulerId = itemClicked.dataset.haulerid;
+    // Define a placeholder name for the hauling ship
     let haulingShip = { name: "Incorrect" };
     for (const ship of haulers) {
       if (ship.id === parseInt(haulerId)) {
