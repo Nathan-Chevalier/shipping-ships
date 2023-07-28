@@ -1,5 +1,19 @@
 import { getHaulers, getCargo } from "./database.js";
 
+export const haulerList = () => {
+  const haulers = getHaulers();
+
+  let haulersHTML = "<ul>";
+
+  for (const hauler of haulers) {
+    haulersHTML += `<li data-id="${hauler.id}" data-type="hauler">${hauler.shipName}</li>`;
+  }
+
+  haulersHTML += "</ul>";
+
+  return haulersHTML;
+};
+
 document.addEventListener("click", (clickEvent) => {
   const itemClicked = clickEvent.target;
 
@@ -15,17 +29,3 @@ document.addEventListener("click", (clickEvent) => {
     window.alert(`This hauler is carrying ${shipCounter} cargo ships`);
   }
 });
-
-export const haulerList = () => {
-  const haulers = getHaulers();
-
-  let haulersHTML = "<ul>";
-
-  for (const hauler of haulers) {
-    haulersHTML += `<li data-id="${hauler.id}" data-type="hauler">${hauler.shipName}</li>`;
-  }
-
-  haulersHTML += "</ul>";
-
-  return haulersHTML;
-};
