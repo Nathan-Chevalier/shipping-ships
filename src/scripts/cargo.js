@@ -3,7 +3,7 @@ const cargoShips = getCargo();
 const haulers = getHaulers();
 
 export const cargoList = () => {
-  let cargoHTML = "<ul>";
+  let cargoHTML = `<ul style="column-count:3;">`;
 
   for (const ship of cargoShips) {
     cargoHTML += `<li data-haulerid="${ship.haulerId}" data-type="cargoShip" data-name="${ship.shipName}">${ship.shipName}</li>`;

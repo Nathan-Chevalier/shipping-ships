@@ -33,6 +33,7 @@ document.addEventListener("click", (clickEvent) => {
       return;
     } else {
       dockedShips += dockedList.join(", ");
+      dockedShips += ".";
 
       window.alert(dockedShips);
     }
